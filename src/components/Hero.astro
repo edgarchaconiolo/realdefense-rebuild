@@ -1,0 +1,159 @@
+---
+// src/components/Hero.astro
+---
+
+<section class="hero">
+  <div class="container hero__inner">
+    <!-- Left: text content -->
+    <div class="hero__content">
+      <h1 class="hero__headline">Monetize Every Moment</h1>
+      <p class="hero__subheadline">
+        RealDefense creates security, privacy, and productivity apps that
+        generate consumer demand. Our proven revenue-share model helps partners
+        scale fast by boosting Average Order Value, Lifetime Value, and
+        Retention.
+      </p>
+      <a href="#" class="btn btn--hero">Partner with Us</a>
+
+      <!-- Award badges -->
+      <div class="hero__badges">
+        <img
+          src="/Deloitte_Fast500_2024_Horizontal-800x233.png"
+          alt="Deloitte Fast 500 2024"
+          class="badge-img"
+        />
+        <img
+          src="/TWP_Los_Angeles_County_2025-1024x529.png"
+          alt="Top Work Places LA County 2025"
+          class="badge-img"
+        />
+      </div>
+    </div>
+
+    <!-- Right: laptop image with overlaid cards -->
+    <div class="hero__visual">
+      <img
+        src="/Laptop-1024x726.webp"
+        alt="RealDefense platform"
+        class="hero__laptop"
+      />
+      <div class="hero__overlay-cards">
+        <div class="overlay-card">
+          <div class="overlay-card__label">SIGNAL</div>
+          <p>Your privacy is at risk.</p>
+        </div>
+        <div class="overlay-card overlay-card--opportunity">
+          <div class="overlay-card__label">OPPORTUNITY</div>
+          <p>Protect yourself from malware.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    background: white;
+    padding: 4rem 0 0 0;
+    overflow: hidden;
+  }
+
+  .hero__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .hero__content {
+    padding: 2rem 0 4rem 0;
+  }
+
+  .hero__headline {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--color-navy);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero__subheadline {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.75;
+    margin-bottom: 2rem;
+    max-width: 500px;
+  }
+
+  .btn--hero {
+    display: inline-block;
+    background: #2d4a8a;
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 4px;
+    margin-bottom: 2.5rem;
+  }
+
+  .btn--hero:hover {
+    background: var(--color-blue);
+  }
+
+  .hero__badges {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .badge-img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  /* Laptop + overlay cards */
+  .hero__visual {
+    position: relative;
+  }
+
+  .hero__laptop {
+    width: 100%;
+    display: block;
+  }
+
+  .hero__overlay-cards {
+    position: absolute;
+    bottom: 20%;
+    right: 2%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 200px;
+  }
+
+  .overlay-card {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .overlay-card__label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #2d4a8a;
+    margin-bottom: 0.25rem;
+  }
+
+  .overlay-card p {
+    font-size: 0.8rem;
+    color: #333;
+    margin: 0;
+  }
+</style>

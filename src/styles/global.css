@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+/* ================================
+   CUSTOM CSS — your own styles
+   These work alongside Tailwind
+   ================================ */
+
+/* CSS Variables — your brand colors */:root {
+  --color-navy:   #0A1628;
+  --color-blue:   #0066FF;
+  --color-accent: #00C2FF;
+  --color-light:  #F0F6FF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  color: #333333;
+  background: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lexend', sans-serif;
+  color: var(--color-navy);
+  line-height: 1.1;
+}
+
+p {
+  line-height: 1.75;
+}
+
+.section-padding {
+  padding: 5rem 1.5rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}

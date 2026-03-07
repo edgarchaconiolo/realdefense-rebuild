@@ -1,0 +1,82 @@
+---
+// src/components/Navbar.astro
+// The --- block is the "frontmatter" - it runs at build time
+// For now it's empty, but later we'll import things here
+---
+
+<nav class="navbar">
+  <div class="container navbar__inner">
+    <!-- Logo -->
+    <a href="/" class="navbar__logo">
+      <img src="/realdefense-logo-blue.svg" alt="RealDefense" height="36" />
+    </a>
+
+    <!-- Nav links -->
+    <ul class="navbar__links">
+      <li><a href="#">Products</a></li>
+      <li><a href="#">Solutions</a></li>
+      <li><a href="#">Partners</a></li>
+      <li><a href="#">About Us</a></li>
+    </ul>
+
+    <!-- CTA button -->
+    <a href="#" class="btn btn--primary">Partner with Us</a>
+  </div>
+</nav>
+
+<style>
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: white;
+    border-bottom: 1px solid #eee;
+  }
+
+  .navbar__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  .navbar__logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--color-navy);
+  }
+
+  .navbar__links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+  }
+
+  .navbar__links a {
+    text-decoration: none;
+    color: var(--color-navy);
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .navbar__links a:hover {
+    color: var(--color-blue);
+  }
+
+  .btn--primary {
+    background: var(--color-blue);
+    color: white;
+    padding: 0.6rem 1.25rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .btn--primary:hover {
+    background: #0052cc;
+  }
+</style>
