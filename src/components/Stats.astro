@@ -1,0 +1,156 @@
+---
+// src/components/Stats.astro
+---
+
+<section class="stats">
+  <div class="container">
+    <h2 class="stats__heading">Platform Results</h2>
+
+    <div class="stats__grid">
+      <div class="stat">
+        <div
+          class="stat__number"
+          data-target="500"
+          data-prefix="$"
+          data-suffix="M+"
+        >
+          $0M+
+        </div>
+        <div class="stat__label">Partner Revenue</div>
+      </div>
+      <div class="stat">
+        <div
+          class="stat__number"
+          data-target="100"
+          data-prefix=""
+          data-suffix="M+"
+        >
+          0M+
+        </div>
+        <div class="stat__label">Customers</div>
+      </div>
+      <div class="stat">
+        <div
+          class="stat__number"
+          data-target="5"
+          data-prefix=""
+          data-suffix="X"
+        >
+          0X
+        </div>
+        <div class="stat__label">ROI Boost</div>
+      </div>
+    </div>
+
+    <div class="stats__cta">
+      <a href="#" class="btn btn--stats">Partner with Us</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .stats {
+    padding: 6rem 0;
+    background-image: url("/navy-blue-swish-wave-background-1728x531.png");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: white;
+  }
+
+  .stats__heading {
+    font-family: "Lexend", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 3rem;
+  }
+
+  .stats__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+  }
+
+  .stat {
+    background: white;
+    border: none;
+    border-radius: 4px;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .stat__number {
+    font-family: "Lexend", sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #1a3a6b;
+    line-height: 1;
+    margin-bottom: 0.75rem;
+  }
+
+  .stat__label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-navy);
+  }
+
+  .stats__cta {
+    margin-top: 2rem;
+  }
+
+  .btn--stats {
+    display: inline-block;
+    background: #2d4a8a;
+    color: white;
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .btn--stats:hover {
+    background: #3d5a9a;
+  }
+</style>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const statNumbers =
+            entry.target.querySelectorAll<HTMLElement>(".stat__number");
+          statNumbers.forEach((el) => {
+            const target = parseInt(el.dataset.target ?? "0");
+            const prefix = el.dataset.prefix ?? "";
+            const suffix = el.dataset.suffix ?? "";
+            let startTime: number | null = null;
+            const duration = 2000;
+
+            const update = (currentTime: number) => {
+              if (!startTime) startTime = currentTime;
+              const elapsed = currentTime - startTime;
+              const progress = Math.min(elapsed / duration, 1);
+              const eased = 1 - Math.pow(1 - progress, 3);
+              const current = Math.floor(eased * target);
+              el.textContent = prefix + current + suffix;
+              if (progress < 1) requestAnimationFrame(update);
+            };
+            requestAnimationFrame(update);
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 },
+  );
+
+  const statsSection = document.querySelector(".stats");
+  if (statsSection) observer.observe(statsSection);
+</script>
