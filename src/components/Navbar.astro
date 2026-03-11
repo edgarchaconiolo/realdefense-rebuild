@@ -1,17 +1,13 @@
 ---
 // src/components/Navbar.astro
-// The --- block is the "frontmatter" - it runs at build time
-// For now it's empty, but later we'll import things here
 ---
 
 <nav class="navbar">
-  <div class="container navbar__inner">
-    <!-- Logo -->
+  <div class="navbar__inner container">
     <a href="/" class="navbar__logo">
       <img src="/realdefense-logo-blue.svg" alt="RealDefense" height="36" />
     </a>
 
-    <!-- Nav links -->
     <ul class="navbar__links">
       <li><a href="#">Products</a></li>
       <li><a href="#">Solutions</a></li>
@@ -19,8 +15,25 @@
       <li><a href="#">About Us</a></li>
     </ul>
 
-    <!-- CTA button -->
-    <a href="#" class="btn btn--primary">Partner with Us</a>
+    <a href="#" class="btn--primary navbar__cta">Partner with Us</a>
+
+    <!-- Hamburger button (mobile only) -->
+    <button class="navbar__hamburger" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div class="navbar__mobile-menu">
+    <ul>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">Solutions</a></li>
+      <li><a href="#">Partners</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#" class="btn--primary">Partner with Us</a></li>
+    </ul>
   </div>
 </nav>
 
@@ -32,7 +45,7 @@
     right: 0;
     z-index: 100;
     background: white;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #e5e5e5;
   }
 
   .navbar__inner {
@@ -42,11 +55,8 @@
     height: 64px;
   }
 
-  .navbar__logo {
-    font-size: 1.25rem;
-    font-weight: 700;
-    text-decoration: none;
-    color: var(--color-navy);
+  .navbar__logo img {
+    display: block;
   }
 
   .navbar__links {
@@ -58,7 +68,7 @@
   .navbar__links a {
     text-decoration: none;
     color: var(--color-navy);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 500;
   }
 
@@ -76,16 +86,94 @@
     font-weight: 600;
   }
 
-  .btn--primary:hover {
-    background: #0052cc;
+  .navbar__hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .navbar__hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--color-navy);
+    transition: all 0.3s ease;
+    transform-origin: center;
+  }
+
+  /* Hamburger open state */
+  .navbar__hamburger.is-open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .navbar__hamburger.is-open span:nth-child(2) {
+    opacity: 0;
+  }
+  .navbar__hamburger.is-open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Mobile menu */
+  .navbar__mobile-menu {
+    display: none;
+    background: white;
+    border-top: 1px solid #e5e5e5;
+    padding: 1.5rem;
+  }
+
+  .navbar__mobile-menu.is-open {
+    display: block;
+  }
+
+  .navbar__mobile-menu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .navbar__mobile-menu a {
+    text-decoration: none;
+    color: var(--color-navy);
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .navbar__mobile-menu .btn--primary {
+    display: inline-block;
+    margin-top: 0.5rem;
   }
 
   @media (max-width: 768px) {
     .navbar__links {
       display: none;
     }
-    .btn--primary {
+    .navbar__cta {
       display: none;
+    }
+    .navbar__hamburger {
+      display: flex;
     }
   }
 </style>
+
+<script>
+  const hamburger = document.querySelector(".navbar__hamburger");
+  const mobileMenu = document.querySelector(".navbar__mobile-menu");
+
+  hamburger?.addEventListener("click", () => {
+    hamburger.classList.toggle("is-open");
+    mobileMenu?.classList.toggle("is-open");
+  });
+
+  // Close menu when a link is clicked
+  mobileMenu?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      hamburger?.classList.remove("is-open");
+      mobileMenu.classList.remove("is-open");
+    });
+  });
+</script>
