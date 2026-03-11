@@ -109,6 +109,8 @@
   .footer__badge {
     height: 60px;
     width: auto;
+    object-fit: contain;
+    alighn-self: start;
   }
 
   .footer__col h4 {
@@ -146,5 +148,14 @@
   .footer__bottom p {
     font-size: 0.85rem;
     color: #888;
+  }
+
+  @media (max-width: 768px) {
+    .footer__inner {
+      grid-template-columns: 1fr 1fr;
+    }
+    .footer__brand {
+      grid-column: 1 / -1;
+    }
   }
 </style>
