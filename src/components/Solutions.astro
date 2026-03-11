@@ -1,0 +1,134 @@
+---
+// src/components/Solutions.astro
+---
+
+<section class="solutions">
+  <div class="container solutions__inner">
+    <!-- Left: headline -->
+    <div class="solutions__heading">
+      <h2>Solutions that serve your business</h2>
+      <p>
+        Whether you're a software, service, or device business, RealDefense
+        solutions extend and improve your customers' experience.
+      </p>
+    </div>
+
+    <!-- Right: cards grid -->
+    <div class="solutions__grid">
+      <div class="solution-card">
+        <img
+          src="https://stagessl.realdefen.se/content/uploads/2025/12/consumer-software-hero-image.png"
+          alt="Consumer Software Publishers"
+        />
+        <h3>Consumer Software Publishers</h3>
+        <p>Increase your revenue without new builds.</p>
+      </div>
+
+      <div class="solution-card">
+        <img
+          src="https://stagessl.realdefen.se/content/uploads/2026/01/telco-isp-services-hero-image-550x365-1.png"
+          alt="Telco & ISP"
+        />
+        <h3>Telco & ISP</h3>
+        <p>Create new revenue. Add value. Keep competitive prices.</p>
+      </div>
+
+      <div class="solution-card">
+        <img
+          src="https://stagessl.realdefen.se/content/uploads/2026/01/financial-services-hero-image-465x396-1.png"
+          alt="Financial Services"
+        />
+        <h3>Financial Services</h3>
+        <p>Turn everyday customer touchpoints into revenue opportunities.</p>
+      </div>
+
+      <div class="solution-card">
+        <img
+          src="https://stagessl.realdefen.se/content/uploads/2026/01/original-equipment-manufacturers-OEM-hero-image-550x468-1.png"
+          alt="Hardware OEMs"
+        />
+        <h3>Hardware OEMs</h3>
+        <p>Turn device performance & protection into profit.</p>
+      </div>
+
+      <div class="solution-card">
+        <img
+          src="https://stagessl.realdefen.se/content/uploads/2026/01/storage-media-hero-image-465x396-1.png"
+          alt="Storage Media"
+        />
+        <h3>Storage Media</h3>
+        <p>Monetize your storage ecosystem.</p>
+      </div>
+
+      <div class="solution-card">
+        <img
+          src="https://stagessl.realdefen.se/content/uploads/2026/01/developers-hero-image-465x396-1.png"
+          alt="Developers"
+        />
+        <h3>Developers</h3>
+        <p>Add a lightweight SDK that turns device signals into profit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .solutions {
+    padding: 6rem 0;
+    background: white;
+  }
+
+  .solutions__inner {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .solutions__heading h2 {
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: var(--color-navy);
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+  }
+
+  .solutions__heading p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.75;
+  }
+
+  .solutions__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid #e5e5e5;
+    border-left: 1px solid #e5e5e5;
+  }
+
+  .solution-card {
+    padding: 2rem;
+    border-right: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .solution-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: contain;
+    margin-bottom: 1.25rem;
+  }
+
+  .solution-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-navy);
+    margin-bottom: 0.5rem;
+  }
+
+  .solution-card p {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.6;
+  }
+</style>

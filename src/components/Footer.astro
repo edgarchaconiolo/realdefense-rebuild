@@ -1,0 +1,150 @@
+---
+// src/components/Footer.astro
+---
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <!-- Left: logo + badge -->
+    <div class="footer__brand">
+      <img
+        src="/realdefense-logo-blue.svg"
+        alt="RealDefense"
+        class="footer__logo"
+      />
+      <img
+        src="/Deloitte_Fast500_2024_Horizontal-800x233.png"
+        alt="Deloitte Fast 500"
+        class="footer__badge"
+      />
+    </div>
+
+    <!-- Nav columns -->
+    <div class="footer__col">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="#">Device Optimization</a></li>
+        <li><a href="#">Driver & Software Updater</a></li>
+        <li><a href="#">Antivirus</a></li>
+        <li><a href="#">VPN</a></li>
+        <li><a href="#">Identity Protection</a></li>
+        <li><a href="#">Password Manager</a></li>
+        <li><a href="#">Technical Support</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4>Solutions</h4>
+      <ul>
+        <li><a href="#">Consumer Software</a></li>
+        <li><a href="#">OEM</a></li>
+        <li><a href="#">Storage Media</a></li>
+        <li><a href="#">ISP Telco</a></li>
+        <li><a href="#">Financial Services</a></li>
+        <li><a href="#">Affiliates</a></li>
+        <li><a href="#">Developers</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Case Studies</a></li>
+        <li><a href="#">Thought Leadership</a></li>
+        <li><a href="#">News</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Our Team</a></li>
+        <li><a href="#">Corporate Development</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <p>© 2026 RealDefense, LLC. All international rights reserved.</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: white;
+    border-top: 1px solid #e5e5e5;
+    padding-top: 4rem;
+  }
+
+  .footer__inner {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+    padding-bottom: 3rem;
+  }
+
+  .footer__brand {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .footer__logo {
+    height: 36px;
+    width: auto;
+  }
+
+  .footer__badge {
+    height: 60px;
+    width: auto;
+  }
+
+  .footer__col h4 {
+    font-family: "Lexend", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-navy);
+    margin-bottom: 1rem;
+  }
+
+  .footer__col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .footer__col ul a {
+    font-size: 0.875rem;
+    color: #555;
+    text-decoration: none;
+    line-height: 1.4;
+  }
+
+  .footer__col ul a:hover {
+    color: var(--color-navy);
+  }
+
+  .footer__bottom {
+    border-top: 1px solid #e5e5e5;
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .footer__bottom p {
+    font-size: 0.85rem;
+    color: #888;
+  }
+</style>

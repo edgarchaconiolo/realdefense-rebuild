@@ -1,0 +1,105 @@
+---
+// src/components/Partnership.astro
+---
+
+<section class="partnership">
+  <div class="container">
+    <h2 class="partnership__heading">
+      Choose the right RealDefense Partnership
+    </h2>
+
+    <div class="partnership__cards">
+      <div class="partnership-card">
+        <h3>White Label / Licensing</h3>
+        <p>
+          Choose from a flexible range of SDKs and microservices that can be
+          customized to meet your specific needs.
+        </p>
+      </div>
+      <div class="partnership-card partnership-card--featured">
+        <h3>Reseller</h3>
+        <p>
+          Quickly grow your revenue with solutions that are easy to launch and
+          fast to scale.
+        </p>
+      </div>
+      <div class="partnership-card">
+        <h3>Affiliate</h3>
+        <p>
+          Earn industry-leading commissions from offering RealDefense solutions
+          that your customers want.
+        </p>
+      </div>
+    </div>
+
+    <div class="partnership__cta">
+      <a href="#" class="btn btn--partnership">Partner with Us</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .partnership {
+    padding: 6rem 0;
+    background: #1a3a6b;
+    background-image: url("/navy-blue-swish-wave-background-1728x531.png");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: white;
+  }
+
+  .partnership__heading {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .partnership__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto 3rem;
+  }
+
+  .partnership-card {
+    background: white;
+    border-radius: 4px;
+    padding: 2.5rem 2rem;
+    text-align: left;
+  }
+
+  .partnership-card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-navy);
+    margin-bottom: 1rem;
+  }
+
+  .partnership-card p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.7;
+  }
+
+  .btn--partnership {
+    display: inline-block;
+    background: #2d4a8a;
+    color: white;
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .btn--partnership:hover {
+    background: #3d5a9a;
+  }
+</style>
